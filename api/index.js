@@ -1,6 +1,8 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
+const port = 3000;
+const cors = require('cors');
+
 
 // Use the cors middleware
 app.use(cors({
@@ -11,6 +13,12 @@ app.get('/api/message', (req, res) => {
     res.json({ message: 'Hello from the backend!' });
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
+
+
+
+
+

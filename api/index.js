@@ -60,6 +60,17 @@ app.get('/api/message1', (req, res) => {
   res.json({ message1: 'Hello Marisa! This is the backend of the server hello, how are you?' });
 });
 
+app.post('/api/process-number', (req, res) => {
+  const { number } = req.body;
+  
+  if (typeof number === 'number') {
+    const result = number * 2;
+    res.json({ result });
+  } else {
+    res.status(400).json({ error: 'Invalid input, please send a number.' });
+  }
+});
+
 
 
 app.listen(port, () => {

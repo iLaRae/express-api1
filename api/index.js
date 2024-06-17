@@ -42,7 +42,7 @@ if (!fs.existsSync(submissionsFile)) {
   });
 }
 
-app.post('/submit', (req, res) => {
+app.post('/api/submit', (req, res) => {
   const { firstName, lastName, email } = req.body;
   const submission = { firstName, lastName, email };
 
